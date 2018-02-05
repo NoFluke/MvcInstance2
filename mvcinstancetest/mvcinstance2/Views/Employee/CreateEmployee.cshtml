@@ -1,0 +1,68 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateEmployee</title>
+    <script>
+        function ResetForm()
+        {
+            document.getElementById("TxtFName").value = "";
+            document.getElementById("TxtLName").value = "";
+            document.getElementById("TxtSalary").value = "";
+        }
+    </script>
+</head>
+<body>
+    <div> 
+        @*<form action="/Employee/SaveEmployee" method="post"> 
+         First Name: <input type="text" id="TxtFName" name="FirstName" value="" /><br />
+         Last Name: <input type="text" id="TxtLName" name="LastName" value="" /><br />
+         Salary: <input type="text" id="TxtSalary" name="Salary" value="" /><br />
+         <input type="submit" name="BtnSave" value="SaveEmployee" />
+         <input type="button" name="BtnReset" value="Reset" />
+            @*<input type="submit" name="BtnSubmit" value="Cancel" />*@
+            @*<input type="button" name="BtnSubmit" value="Cancel" onclick="document.getElementById('CancelForm').submit()" />*@
+        @*</form>*@ 
+
+        @*<form action="/Employee/CancelSave" id="CancelForm" method="get" style="display:none">*@
+           
+        @*</form>*@
+        <form action="" method="post" id="EmployeeForm">
+        @*First Name: <input type="text" id="TxtFName" name="FirstName" value="" /><br />
+        Last Name: <input type="text" id="TxtLName" name="LastName" value="" /><br />
+        Salary: <input type="text" id="TxtSalary" name="Salary" value="" /><br />*@
+            @* 如果控件名称与类属性名称不匹配会发生什么情况？ *@
+            @* 三种解决方案 *@
+            @*First Name: <input type="text" id="TxtFName" name="FName" value="" /><br />
+        Last Name: <input type="text" id="TxtLName" name="LName" value="" /><br />
+        Salary: <input type="text" id="TxtSalary" name="Salary" value="" /><br />
+        <input type="submit" name="BtnSave" value="SaveEmployee" onclick="document.getElementById('EmployeeForm').action = '/Employee/SaveEmployee'" />
+        <input type="button" name="BtnReset" value="Reset" />
+         <input type="submit" name="BtnSubmit" value="Cancel" onclick="document.getElementById('EmployeeForm').action = '/Employee/CancelSave'"  />*@
+        @*<input type="button" name="BtnSubmit" value="Cancel" onclick="document.getElementById('CancelForm').submit()" />*@
+
+            @* 使用Table标签 *@
+            <table>
+                <tr><td>First Name:</td><td><input type="text" id="TxtFName" name="FirstName" value="" /></td></tr>
+                <tr><td colspan="2" align="right">@Html.ValidationMessage("FirstName")</td></tr>
+                <tr><td>First Name:</td><td><input type="text" id="TxtFName" name="LastName" value="" /></td></tr>
+                <tr><td colspan="2" align="right">@Html.ValidationMessage("LastName")</td></tr>
+                <tr><td>First Name:</td><td><input type="text" id="TxtFName" name="Salary" value="" /></td></tr>
+                <tr><td colspan="2" align="right">@Html.ValidationMessage("Salary")</td></tr>
+                <tr><td><input type="submit" name="BtnSubmit" value="SaveEmployee" />
+                        <input type="submit" name="BtnSubmit" value="Cancel" />
+                        <input type="button" name="BtnReset" value="Reset" onclick="ResetForm" /></td></tr>
+                @*/单元格横跨列数*@
+            </table>
+        </form> 
+
+        
+    </div>
+</body>
+</html>
